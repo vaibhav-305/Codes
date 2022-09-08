@@ -1,0 +1,15 @@
+TOPICS
+-> Part 1
+    1) Prime test				  8) Goldback's Conjecture
+    2) Prime factorization                        9) Calculating Binomial coefficient
+    3) Finding number of divisors of N           10) Introduction to Modulo inverse and how to calculate it. 
+    4) Sieve of Eratosthenes
+    5) Segmented Sieve
+    6) Binary Exponentiation
+    7) Euclid algorithm for GCD
+-> Part 2
+    1) Extended Euclidean Algorithm              6) Euler Totient Function
+    2) Linear dipohantine equation               7) Sum of divisors        __
+    3) Matrix exponentiation                     8) Pollard p-1 method       |---both are used for integer factorization (are fast but probabilistic)
+    4) Fibonacci numbers in O(log(n))            9) Pollard Rho Algorithm  __|
+    5) Chinese remainder theorm

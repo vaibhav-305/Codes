@@ -1,0 +1,14 @@
+Case-I:
+    If INDEX starts from 0
+          
+        If a node is at (i)th index then:
+            Left Child : [(2*i)+1]
+            Right Child: [(2*i)+2]
+            Parent indx: floor[(i-1)/2]
+Case-II
+    If INDEX starts from 1
+        
+        If a node is at (i)th index:
+            Left Child : [2*i]
+            Right Child: [(2*i)+1]
+            Parent indx: floor[i/2]

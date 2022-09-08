@@ -1,0 +1,4 @@
+Recursion
+    -> Express in terms of (index,Weight)    (memo[n][W+1])
+    -> Explore all possibilities => pick or not-pick
+    -> Do max or add all posiiblities according to thing asked in question 

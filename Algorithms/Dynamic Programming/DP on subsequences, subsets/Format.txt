@@ -1,0 +1,6 @@
+Recursion-
+    1) Express everything in terms of (index, target)  (memo[n][target+1])
+    2) Explore possibilities of that index
+       choices:   part of the     |      not part of 
+		  subseq          |       subseq
+    3) Return T/F if found or add all possibilities to find count 

@@ -1,0 +1,37 @@
+The suffix array mostly basically used in string questions
+
+A suffix array array is an array which contains all the sorted suffixes of string.
+The actual cuffix array is the array of sorted indices.
+
+		The Suffix array (S.A.) of "camel"
+	________________                  ___↓______________________________________________             
+       | index | suffix |                | index | suffix in lexiographically sorted order |
+       |-------+--------|                |-------+-----------------------------------------|
+       |   0   | camel  |                |   1   |          amel                           | 
+       |   1   |  amel  |                |   0   |         camel                           | 
+       |   2   |   mel  |      -->       |   3   |            el                           |      
+       |   3   |    el  |                |   4   |             l                           |
+       |   4   |     l  |                |   2   |           mel                           |
+       ------------------                ---------------------------------------------------
+                                             ↑
+ 				    actual Suffix array
+
+The suffix array provides a space efficient alternative to a suffix tree which itself is a compressed version of trie.
+Suffix arrays can do everything suffix trees can do with some additional information such as Longest common prefix(LCP)
+
+--> LCP (longest common prefix)
+	
+        • The LCP array is an array in which every index tracks how many characters two sorted adjacent suffixes have in common.
+
+	LCP array of "ABABBAB"
+		 ____________________________________
+		| Sorted index | Suffix  | LCP value |
+		|--------------+---------+-----------|
+		|      5       | AB      |    0      | ← First will always be zero
+		|      0       | ABABBAB |    2      |
+		|      2       | ABBAB   |    2      |    LCP value is the no. of length common substring(from starting) in its adjacent suffixes.
+		|      6       | B       |    0      |
+		|      4       | BAB     |    1      |
+		|      1       | BABBAB  |    3      |
+		|      3       | BBAB    |    1      |
+		--------------------------------------

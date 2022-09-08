@@ -1,0 +1,12 @@
+To write recurrence: 
+    1. Express everything in terms of (index,buy)   buy->bool (if can buy or not)
+    2. Explore possibilities on that day
+	buy or not buy  | sell or not sell
+    3. Take max of all profits made
+    4. Base case
+
+https://www.geeksforgeeks.org/program-nth-catalan-number/
+https://www.geeksforgeeks.org/assembly-line-scheduling-dp-34/
+https://practice.geeksforgeeks.org/problems/minimum-number-of-jumps-1587115620/1
+interviewbit1234
+

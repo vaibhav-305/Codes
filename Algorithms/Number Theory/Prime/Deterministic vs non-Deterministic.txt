@@ -1,0 +1,7 @@
+      Deterministic algo       |         Non-deterministic(Probabilistic) algo
+ ------------------------------+-----------------------------------------
+ -> For a particular input the |-> For a particular input the computer
+    computer will give always  |  will give different output on different 
+    same output.               |  execution. 
+ -> It gives 100% accuracy     |-> It gives high probability of accuracy
+                               |   (answer with small error)  

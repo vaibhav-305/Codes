@@ -1,0 +1,12 @@
+Standard DP problems
+    1.) 0-1 Knapsack
+    2.) Unbounded Knapsack
+    3.) Fibonacci
+    4.) LCS (Longest common subsequence)
+    5.) LIS (Longest Increasing subsequence)
+    6.) Kandane's algorithm
+    7.) MCM (Matric Chain Multiplication)
+    8.) DP on Trees
+    9.) DP on Grid
+    10.) Optimal Stratergy for game 
+    11.) Edit distance

@@ -1,0 +1,56 @@
+Basically in MCM related problems we divide array into differnt parts by chosing the break-point-index 'k'
+then from those parts of array we calulate our temp ans and then integrate all those temp_ans to get the final answer
+ __ __ __ __ __ __
+|__|__|__|__|__|__|
+ i   ↑  ↑⇄↑  ↑  j
+     k  k  k  k
+
+Here we choose 2 indexes i and j first:
+    -> i index is on left side of array
+    -> j is on the right side of array
+		(not necessary on the rightmost/leftmost)
+then we choose the range for 'k' and move k from i to j accordingly
+then we calculate answer from temporary answer(temp_ans).
+then using all those temporary answers we calculate final answer within the loop only
+
+* Base code for MCM (variations maybe there acc to question)
+
+int solve(int arr[], int i, int j){
+    if(i>j)      //base condition; i>j means array is empty, here can also be i>=j(i==j means only one element prestent) depending on question 
+	return 0;
+
+    for(int k=i; k<j; k++)  //k can start from i+1 too ....etc variations
+    {
+	//calculate temporary answer
+	temp_ans = solve(arr,i,k) ± solve(arr,k+1,j)+...;    //soving the parts of array and add/substract according to ques
+
+	//calculate ans by some condition/function acc to ques.
+	...ans...( function(...)/if(...) )
+    }
+    return ans;
+}
+
+Steps for MCM questions:-
+1. Choose valid i and j
+    -> i index is on left side of array
+    -> j is on the right side of array
+		(not necessary on the rightmost/leftmost)
+2. Choose correct base condition
+			  | 
+	if(i>j)           | 	if(i>=j)     
+	    return 0;     |	    return 0;
+			  |
+3. Choose k range and move k from i to j:
+	 	    i                     j-1
+		   🡥                    🡥
+	 	  K                    k         
+  can start from   🡦                    🡦    can end at
+ 	 	    i+1                   j
+
+    2 usual schemes for k:
+    	->k from:  k=i to k=j-1  --> array parts from : i to k  and  k+1 to j
+    	->k from:  k=i+1 to k=j  --> array parts from : i to k-1  and  k to j
+4. calculate temporary_answer by solving parts
+5. calculate final answer from temp_ans using condition acc. to question (function(..)/if(..) in the k loop)
+
+

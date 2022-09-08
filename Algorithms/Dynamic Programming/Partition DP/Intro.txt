@@ -1,0 +1,8 @@
+Partition DP
+1) Start with entire block/array f(i,j) i->start , j->end 
+2) Base case
+3) Try all partitions -> Run a loop to try all partitions
+    2 usual schemes for k:
+    	->k from:  k=i to k=j-1  --> array parts from : i to k  and  k+1 to j
+    	->k from:  k=i+1 to k=j  --> array parts from : i to k-1  and  k to j
+4) Return the best possible 2 partitions

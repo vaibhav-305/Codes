@@ -1,0 +1,13 @@
+DP on grids/2D matrix
+    -> Count Paths
+    -> Count paths with obstacles
+    -> Min. Path sum
+    -> Max Path sum
+    -> Triangle problem
+    -> 2 start points
+
+Do all possible ways -> Recurssion -> recurrence
+    1) Express all terms in terms of index (i,j) i-->row  j-->col, Base case
+    2) Explore/Do all stuffs 
+    3) Sum all choices -> for counting no. of ways
+       find max/min of all choices -> find min max accordingly

@@ -1,0 +1,83 @@
+🔴 MODULO PROPERTIES :
+    ⒈ (A+B)%N = ((A % N) + (B % N))%N           //in minus operator, a%N < b%N  but a > b  (a=9, b=4 mod 8) so if comes -ve we have to add N(mod value). 
+    ⒉ (A*B)%N = ((A % N)*(B % N))%N₁
+● Modulo Congruence :
+    A and B are said tobe congruent to each other under modulo N, if they leave same remainder when divided by N
+        A ≡ B (% N)
+	eg: 13 ≡ 41  (% 7)
+	        as 13 % 7= 6
+                 & 41 % 7=6
+	
+	so we can replace A by B (and vice-a-versa)
+	(41 + 35 + 5) % 7 = (13 + 35 + 5) % 7                 (replaced 13 by 41)
+
+    ⇒Properties 
+	1. If a ≡ b (% N)
+	      then,
+		a-b ≡ 0   (% N)               => a-b=N*k => a=N*k+b
+	      ⇒ a-b divisible by N
+	2. If a*b = c
+	      then,
+		a%N * b%N = c % N
+	3. If a	≡ b (% N)
+	      then,
+		a^k = b^k   (% N)    (a power k (a^k) = b power k (b^k) )
+	   For eg:
+		16 ≡ 1  (% 3)
+		so for calculating (16^10)%3 = (1^10)%3 = 1
+	4. If b is very large (or b>m) then: 
+		a^b (% m) = a^(b % (m-1))     (% m)         (a and m should be coprime)
+    
+    Ques: Find units place digit of 23456*7899?
+    Ans:  For units place digit = (23456*7899)%10
+				= ((23456 % 10) * (7899%10))           (By this we have avoided multiplication and overflow)
+		   		= (6*9)%10 = 4
+    Ques: Find (2^123456789) % 7
+    Ans: we know 123456789 ≡ 0  (% 3)
+	         2^123456789 = (2^3)41152263
+		⇒ (8^41152263) % 7               { 8 ≡ 1  (% 7) }
+		  (1^41152263)%7 = 1           (so much calc. have been saved using properties}
+
+■ Modulo Multiplicative Inverse:
+  ->  as we know that 
+	(a/b)%N ≠ (a%N / b%N) % N
+	we can find modulo inverse of b(say x) and after that replace '/' with '*'
+	(a/b)%N = (a*x)%N
+		= ((a % N)*(x % N)) % N
+	
+	◆Modulo Multiplicative inverse of a number N, under modulo P is defined to be a number X such that
+		N*X ≡ 1  (% P)     => (N*X) % P = 1
+
+	eg: modulo multiplicative inverse of 5, under modulo 7 is 3 since,
+		5*3 ≡ 1   (% 7)
+
+    eg: (6/2)%5 = (6*3)%5                     (as we need to find modulo multiplicative inverse of 2 under modulo 5 which is 3)
+		= ((6%5)*(3%5))%5
+		= (1*3)%5
+		= 3
+  -> NOTE: All numbers don't have a modulo inverse
+		eg: 12 has no modulo inverse under 6
+	 ■■■▶ Modulo inverse of N under modulo P exists iff GCD(N,P)=1    i.e. P and N are co-prime.
+
+  ⫸ Calculating modulo multiplicative inverse :-
+
+       For calculating modulo multiplicative inverse, there are 2 methods
+	   1) Using Fermat's little theorm   (works when m is prime)
+	   2) Using eculidean extended algorithm   (works when a and m are co-prime)
+	
+	◉ Fermat's little theorm :
+	      It states that for prime number p
+		   a^(p-1) ≡ 1       (power(a,p-1)≡1)
+		dividing both sides by a
+	           a^(p-2) ≡ 1/a => a-¹ 
+		   thus a-¹ (% p) = (a^(p-2)) % m
+	◉ Using Euclidean algo :
+		The idea is to use Extended Euclidean algorithms that takes two integers ‘a’ and ‘b’, finds their gcd and also find ‘x’ and ‘y’ such that 
+				ax + by = gcd(a, b)
+		To find multiplicative inverse of ‘a’ under ‘m’, we put b = m in above formula. Since we know that a and m are relatively prime, we can put value of gcd as 1.
+				ax + my = 1
+		If we take modulo m on both sides, we get
+				ax + my ≡ 1 (mod m)
+		We can remove the second term on left side as ‘my (mod m)’ would always be 0 for an integer y. 
+				ax ≡ 1 (mod m)
+		So the ‘x’ that we can find using Extended Euclid Algorithm is the multiplicative inverse of ‘a’

@@ -1,0 +1,5 @@
+1. Common Divisors (https://cses.fi/problemset/task/1081)
+   Smart way, used index-hashing for all divisors
+2. Sum of Divisors (https://cses.fi/problemset/task/1082)
+   Very observational
+   Soln link: https://usaco.guide/problems/cses-1082-sum-of-divisors/solution

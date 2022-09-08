@@ -1,0 +1,54 @@
+Linear Diophantine equation (LDE) 
+------------------------------------
+A Linear Diophantine equation is a equation of general form:
+        ax + by = c
+Where a,b and c are known variables with x and y are unknown
+
+ Note: Degenerate case:-
+       We need to take care of the case where a=b=0 (degenrate case). There are 2 sub-cases in this
+	    Subcase 1			    Subcase 2
+	      When c=0			      When c!=0
+	      Solutions: infinite             Solutions: 0
+
+ Given LDE : ax + by = c
+ To find the (integral)solution of LDE we will utilize Extended Euclidean Algorithm that we have already studied
+
+ Extended algorithm can be used to find the solution of the form ax + by = g(g=gcd(a,b)).
+ So, to find solution of ax + by = c , first find solution of ax + by = g
+
+    Let x' and y'are the (integral)solution of equation ax + by = g, then
+    solution of ax + by = c will be (x0,y0) where
+	x0 = x' * (c/g)
+	y0 = y' * (c/g)
+ -----------------------------------------------------------------------
+ | IMP: For integral solution to exist c must be divisible by gcd(a,b) |
+ -----------------------------------------------------------------------
+ General solution:
+    Once you have one solution you can find all other solutions using a simple formula
+	Let LDE : ax + by = c
+	g = gcd(a,b) and (x0, y0) be the solution of given LDE
+		a.x0 + b.y0 = c
+    If we add b/g to x0 and substract a/g frm y0, the equality will still be valid
+	a.(x0 + b/g) + b.(y0 - a/g) = a.x0 + b.y0 + a.(b/g) - b.(a/g) = a.x0 + b.y0
+    Form this we can say that we add b/g and substract a/g k no. of times 
+    General solution:  
+	x = x0 + k.(b/g)
+	y = y0 - k.(a/g)
+ Minimum value of x+y
+	x+y = x0 + y0 + k.(b.g - a/g) = x0 + y0 + k.((b-a)/g)
+	case 1: a<b			case 2: a>b			case 3: a=b
+	chose samllest k possible	chose biggest k possible	Solution is always x0+y0  
+_______________________________________________________________________________________________________
+For positive solutions (0≤x,y) of LDE:- 
+Popoviciu’s Theorem:
+--------------------
+(Link: https://brilliant.org/wiki/postage-stamp-problem-chicken-mcnugget-theorem/)
+let LDE : ax+by=c and 0≤x,y and a and b are coprime positive integers.
+Then number of pair (x,y) that satisfy the equation :
+		c/ab − {b′c/a} − {a′c/b} + 1
+    where
+      a×a′≡1 (mod b) => a′ = modular inverse of a under modulo b = pow(a,b-2)%b (a and b are co-prime)
+      b×b′≡1 (mod a) => b′ = modular inverse of b under modulo a = pow(b,a-2)%a (a and b are co-prime)
+      {x}=x−floor(x) (fractional part of x) 
+      {p/q} = (p%q)/q
+

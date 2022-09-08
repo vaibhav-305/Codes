@@ -1,0 +1,6 @@
+Recusrsion: 
+    -> Express in terms of index (indx1, indx2)
+    -> Exlore possibility on that index
+	if matched -: 1+func(indx1-1,indx2-1)
+	if not mtched: 0 + max[ func(indx1-1,indx2), func(indx1,indx2-1) ]
+    -> Take the best among them

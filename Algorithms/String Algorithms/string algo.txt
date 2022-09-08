@@ -1,0 +1,9 @@
+1. Sliding Window
+2. String harshing
+3. Rabin-karp matching algo
+4. Prefix function - Knuth-Morris-Pratt
+5. Z-function
+6. Suffix Array
+
+Some topics related to string:
+   ▶ Hamming Distance: Hamming distance in two strings is the number of mismatches at the same position.

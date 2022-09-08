@@ -1,0 +1,50 @@
+Extended Euclidean Algo
+-----------------------
+Extended euclidean algo is extended version of euclidean algorithm and is used to find integer
+solution f the following equation
+				ax+by = gcd(a,b)
+Here a,b are provided and x,y are unknown variables which we have to find such that their values
+satisfy the above equation. Here the solution will always exist . 
+
+Applications of extended euclidean algo:
+ (imp) 1) Used to find solution of linear Diophantine equation
+       2) can be used for finding modulo inverse or for finding gcd of 2 no.
+	  The extended Euclidean algorithm is particularly useful when a and b are coprime (or gcd is 1). Since x is the modular multiplicative inverse of “a modulo b”, and y is the modular multiplicative inverse of “b modulo a”
+
+Bézout's Lemma
+Given 2 integers a and b and their gcd d, then there exists x & y such that ax + by = d
+
+Steps using (pen and paper) 
+      1) Find gcd of numbers a and b using euclidean algo and note the steps
+            say a=57  b=81
+		81 = 1(57) + 24 ....(1) |         
+		57 = 2(24) + 9 .....(2) |
+		24 = 2(9) + 6 ......(3) |
+		9 = 1(6) + 3 --------------->  3 = 9 - 1(6)           
+		6 = 2(3) + 0            |      3 = 9 - 1(24-2(9))   (Putting value of 6 from (3))
+					|      3 = 3(9) - 24
+					|      3 = 3(57 - 2(24))-24  (Putting value of 9 from (2))
+					|      3 = 3(57) - 7(24)
+					|      3 = 3(57) - 7(81 - 1(57)) (putting value of 24 from (1))
+					|      3 = 10(57) - 7(81)
+	     so x=10 , y=-7
+
+Thus to find solution of original eqn, we find solution of all the eqn in between and use those results to find the final solution. This is done through recursion 
+
+Programatically - 
+    GCD(81,57)----(1)
+	↓                    In base case, a=gcd   b=0
+    GCD(57,24)----(2)		gcd = gcd.x + 0.y    Soln: (1,0)
+	↓		     Lets take 2 consecutive func calls
+    GCD(24,9)			Let in eq 1				Let in eqn 2
+	↓			    constants are : a & b		constants are: a1 & b1
+    GCD(9,6)			    coefficients: x & y			coefficients: x1 & y1
+	↓			    Eqn: ax + by = g			Eqn: a1.x1 + b1.y1 = g
+    GCD(6,3)		     
+	↓		     b.x1 + (a mod b).y1 = g		a mod b = a - b.flr(a.b)   flr = floor()
+    GCD(3,0)		     g = b.x1 + (a mod b).y1 = b.x1 + (a - b.flr(a/b)).y1 
+			     g = a.y1 + b.(x1 - y1.flr(a/b))
+			
+			 =>{ x = y1
+			   { y = x1 - y1.flr(a/b)   
+	This is done recursively at every stem till be find x,y for original eq

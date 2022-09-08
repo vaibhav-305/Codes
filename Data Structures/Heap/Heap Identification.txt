@@ -1,0 +1,12 @@
+Heap is used when in question there is:
+    1) someting related to k (k is a number)
+    2) smallest or largest
+-> Basically those question where sorting is direct solution, heap can be applied there
+-> Heap can bring time complexity from n*log(n) --> n*log(k)
+-> For kth smallest --> max heap , we'll push if the element is less than top() and then pop one out after it,
+   For kth largest --> min heap , we'll push if the element is greater than top() and then pop one out after it,
+   After travering the input, the top() will be the answer.
+
+Hard ques
+https://leetcode.com/problems/find-k-th-smallest-pair-distance/
+https://leetcode.com/problems/smallest-range-covering-elements-from-k-lists/    

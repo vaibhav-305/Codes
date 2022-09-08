@@ -1,0 +1,27 @@
+General format for variable size sliding window problems:
+
+int i=0,j=0;
+while(j<size)
+{
+    calculations 
+
+    if(contd. < k)          //contd. -> condition
+	j++;
+
+    else if(contd. == k)
+    {
+	answer calculations
+	j++;
+    }
+
+    else if(contd. > k)
+    {
+	while(contd. > k)
+	{
+	    removing calulations (for i)
+	    i++
+	}
+	j++;      //as now contd. < k , so we add new elements  
+    }
+}
+return answer
